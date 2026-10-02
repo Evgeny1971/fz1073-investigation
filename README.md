@@ -16,54 +16,51 @@
 
 ## 2. Flight Dynamics & Telemetry (Hard Data)
 
-Based on ADS-B telemetry data recorded by flight tracking services (e.g., Flightradar24):
-
-| Parameter | Data Point | Notes |
+### Flight Profile & Technical Parameters
+| Parameter | Recorded Value / Event | Source / Verification Level |
 | :--- | :--- | :--- |
-| **Cruising Altitude** | 33,000 ft (FL330) | Nominal flight level prior to incident |
-| **Minimum Altitude** | ~18,000 ft | Rapid altitude drop during cockpit altercation |
-| **Duration of Descent** | ~37 seconds | High vertical speed descent before recovery |
-| **Recovery Phase** | Manual yoke pull | Flight level stabilized prior to secondary pilot taking controls |
+| **Aircraft Model** | Boeing 737 MAX 8 | Flight Manifest / ADS-B Transponder |
+| **Flight Path** | Dubai (DXB) → Tel Aviv (TLV) | Filed Flight Plan |
+| **Emergency Squawks** | `7700` (Emergency) / `7500` (Interference) | Transponder Logs |
+| **Cruising Flight Level** | 33,000 ft (FL330) | ADS-B Telemetry |
+| **Minimum Recorded Altitude** | ~18,000 ft | ADS-B Telemetry |
+| **Descent Duration** | ~37 seconds | Transponder Pitch/Altitude Logs |
+| **Diversion Airfield** | Tabuk Regional Airport (TUU / OETB) | ATC Clearance Logs |
 
 ---
 
-## 3. Chronology of Events & Verified Actions
+## 3. Chronology & Event Sequence
 
-```text
-[ FL330 Cruising ] ──> [ Cockpit Attack ] ──> [ Altitude Drop ] ──> [ Door Released ]
-                                                                            │
-[ Tabuk Landing ] <── [ Flight Stabilized ] <── [ Yoke Corrected ] <── [ Attacker Subdued ]
+### Event Timeline Matrix
+| Phase | Action / Event | Primary Key Actors | Location / Status |
+| :--- | :--- | :--- | :--- |
+| **Cruise (FL330)** | Flight path nominal | Flight Crew | International Airspace |
+| **Flight Deck Attack** | Co-pilot assault on Captain; column forced down | Co-pilot, Captain Machchar | Flight Deck (Locked) |
+| **Door Release** | Emergency cockpit door lock mechanism overridden | Captain Machchar | Flight Deck |
+| **Cabin Intervention** | Door forced open; attacker physically subdued | Yaniv Hayun & Passengers | Flight Deck / Forward Cabin |
+| **Descent Recovery** | Control yoke pulled back to level aircraft | Yaniv Hayun / Secondary Pilot | Flight Deck |
+| **Diversion & Landing** | Emergency clearance granted; safe touchdown | ATC Saudi Arabia / Flight Crew | Tabuk Regional Airport (TUU) |
 
-Key Event Sequence
-1. In-Flight Assault: The Omani co-pilot initiated an unprovoked assault on the captain (Smith Machchar) using a sharp object, forcing the control column into a steep nose-dive.
-
-2. Cockpit Door Release: Despite severe injuries, Captain Machchar managed to unlock the armored cockpit door mechanism.
-
-3. Passenger Intervention: Passenger Yaniv Hayun, alongside other passengers, forced open the door, entered the flight deck, and physically removed the attacker into the main cabin, where he was restrained.
-
-4. Manual Recovery: Observing an empty control seat during the steep dive, Yaniv Hayun entered the flight deck and pulled back on the yoke, helping arrest the rapid descent until an off-duty/secondary pilot took control.
-
-5. Emergency Diversion: Air Traffic Control in Saudi Arabia granted immediate clearance for an emergency landing at Tabuk Regional Airport.
-
+---
 
 ## 4. Source Verification Matrix
 
+| Claim / Detail | Status | Evidence Type | Primary Source |
+| :--- | :---: | :--- | :--- |
+| **Altitude Loss & Rate of Descent** | 🟢 **Verified** | ADS-B Transponder Logs | Flightradar24 / RadarBox |
+| **Physical In-Cabin Neutralization** | 🟢 **Verified** | Witness Statements & Evidence | Passenger Accounts / Yaniv Hayun |
+| **Emergency Diversion Clearance** | 🟢 **Verified** | Official Regulatory Releases | Saudi Arabia GACA |
+| **Official ICAO Technical Report** | 🟡 **Pending** | Regulatory Investigation | Final Multi-Agency Report |
 
-| Claim / Detail |			Status	|	Source / Evidence |
-| :--- | :--- | :--- |	
-| Altitude loss & telemetry	| 🟢 Verified | ADS-B flight tracking logs (Flightradar24)		|
-| Physical cabin intervention |	🟢 Verified	| Passenger testimonies, physical evidence		|
-| Medical response at Tabuk	| 🟢 Verified | Saudi General Authority of Civil Aviation (GACA) |		
-| Official legal qualification | 🟡 Pending	| Subject to final ICAO / regional investigative report		 |
-				
-5. Media & Reporting Context
-This incident highlights varied reporting frameworks across regional and global media:
+---
 
-	Israeli Media: Focuses on passenger heroism (Yaniv Hayun) and the neutralization of a security threat.
+## 5. Regional & Global Media Framing
 
-	Gulf / Arab Media: Focuses on flight safety protocols, corporate response (Flydubai), and Saudi emergency coordination.
-
-	Western Media (CNN, BBC, Reuters): Focuses on telemetry analysis, cockpit safety design, and flight deck access protocols.
+| Media Group / Sphere | Primary Focus & Narrative | Key Highlights |
+| :--- | :--- | :--- |
+| **Israeli Media** | Passenger intervention & security response | Focus on Yaniv Hayun's actions & survivor accounts |
+| **Gulf / Arab Media** | Aviation safety & regional coordination | Focus on Saudi GACA emergency response & Flydubai statements |
+| **Western Tech / Aviation** | Technical analysis & flight deck security | Focus on 737 MAX telemetry, door access, and crew dynamics |
 
 ## 6. References & Primary Sources
 
