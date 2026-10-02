@@ -49,7 +49,8 @@ Key Event Sequence
 ## 4. Source Verification Matrix
 
 
-Claim / Detail			Status		Source / Evidence		
+Claim / Detail|			Status	|	Source / Evidence
+| :--- | :--- | :--- |	
 Altitude loss & telemetry	🟢 Verified	ADS-B flight tracking logs (Flightradar24)		
 Physical cabin intervention	🟢 Verified	Passenger testimonies, physical evidence		
 Medical response at Tabuk	🟢 Verified	Saudi General Authority of Civil Aviation (GACA)		
