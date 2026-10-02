@@ -1,4 +1,4 @@
-# Open-Data Timeline & Telemetry Analysis: Flydubai Flight FZ1073 Incident
+# Open-Data Timeline & Telemetry Analysis: Flydubai Flight FZ1073 Incident 
 
 > **Disclaimer:** This document is an independent, non-partisan registry of facts regarding the incident aboard Flydubai Flight FZ1073. The goal is to construct an objective, verifiable chronology based strictly on flight telemetry data, verified witness testimony, and official regulatory statements.
 
