@@ -31,16 +31,76 @@
 
 ## 3. Chronology & Event Sequence
 
-### Event Timeline Matrix
-| Phase | Action / Event | Primary Key Actors | Location / Status |
-| :--- | :--- | :--- | :--- |
-| **Cruise (FL330)** | Flight path nominal | Flight Crew | International Airspace |
-| **Flight Deck Attack** | Co-pilot assault on Captain; column forced down | Co-pilot, Captain Machchar | Flight Deck (Locked) |
-| **Door Release** | Emergency cockpit door lock mechanism overridden | Captain Machchar | Flight Deck |
-| **Cabin Intervention** | Door forced open; attacker physically subdued | Yaniv Hayun & Passengers | Flight Deck / Forward Cabin |
-| **Descent Recovery** | Control yoke pulled back to level aircraft | Yaniv Hayun / Secondary Pilot | Flight Deck |
-| **Diversion & Landing** | Emergency clearance granted; safe touchdown | ATC Saudi Arabia / Flight Crew | Tabuk Regional Airport (TUU) |
+```text
+========================================================================================================================
+                             FLIGHT FZ1073 (BOEING 737 MAX 8) — INCIDENT ARCHITECTURE & TELEMETRY PROFILE
+========================================================================================================================
 
+                                 [ ALTITUDE PROFILE & TELEMETRY TIMELINE ]
+
+ Altitude (ft)
+   33,000 |---------[ T₀: NOMINAL CRUISE ]------------------\
+          |         * Flight Path: DXB -> TLV               |
+   30,000 |         * Speed: Mach 0.78 / FL330              |--[ T₁: COCKPIT ASSAULT & NOSE-DOWN ]
+          |                                                 |   * Uncommanded yoke displacement
+   25,000 |                                                 \   * Peak descent rate: > -12,000 ft/min
+          |                                                  \
+   20,000 |                                                   \--[ T₂: TRANSPOONDER SQUAWK 7700 / 7500 ]
+          |                                                    \  * Mode S emergency broadcast sent
+   18,000 |-----------------------------------------------------\----[ T₃-T₅: INTERVENTION & RECOVERY ]
+          |                                                           * Door override released by Captain
+    8,000 |                                                           * Attacker subdued by Yaniv Hayun & crew
+          |                                                           * Yoke pulled back; descent arrested at FL180
+        0 |_____________________________________________________________________[ T₆: TOUCHDOWN AT TABUK (TUU) ]_
+                                                                                 * Priority clearance via Saudi ATC
+
+========================================================================================================================
+
+                                    [ PHYSICAL SPACE & COCKPIT OVERRIDE FLOW ]
+
+ +-------------------------------------------------------+       +--------------------------------------------------+
+ |                     FLIGHT DECK                       |       |                  FORWARD CABIN                   |
+ |                                                       |       |                                                  |
+ |  [ Captain Machchar ] <--- (Assault) --- [ Attacker ] |       |  [ Yaniv Hayun ] & Cabin Crew / Passengers       |
+ |          |                                  |         |       |                         |                        |
+ |          v                                  v         |       |                         v                        |
+ |  [ Door Override ]                   [ Control Yoke ] |       |               [ Physical Intervention ]          |
+ |          |                                  |         |       |                         |                        |
+ +----------|----------------------------------|---------+       +-------------------------|------------------------+
+            | (Mechanical Unlock)              | (Forced Dive)                             | (Door Entered)
+            v                                  v                                           v
+  +-------------------+              +-------------------+                       +-------------------+
+  | Armored Door Lock |              |  -12,000 ft/min   |                       | Attacker Subdued  |
+  | Mechanism Release |              | Altitude Descent  |                       | & Moved to Cabin  |
+  +-------------------+              +-------------------+                       +-------------------+
+            |                                  |                                           |
+            +----------------------------------+-------------------------------------------+
+                                               |
+                                               v
+                                   [ Flight Stabilized @ FL180 ]
+                                   [ Secondary Pilot Takes Yoke]
+
+========================================================================================================================
+
+                                    [ MULTI-AGENCY VERIFICATION & DATA PIPELINE ]
+
+   PRIMARY DATA SOURCES                 ANALYTICAL PROCESSING LAYER                   VERIFICATION STATUS
+  +---------------------+               +---------------------------+               +---------------------+
+  | ADS-B Transponder   | ------------> | Flightradar24 / RadarBox  | ------------> | 🟢 FL330 to FL180   |
+  | (Mode S Packets)    |               | Altitude & Rate Audit     |               |    Descent Verified |
+  +---------------------+               +---------------------------+               +---------------------+
+                                                                                               |
+  +---------------------+               +---------------------------+                          v
+  | Saudi ATC / GACA    | ------------> | Air Traffic Radar &       | ------------> | 🟢 Squawk 7700/7500 |
+  | Official Briefings  |               | Diversion Control Logs    |               |    Diversion Verified|
+  +---------------------+               +---------------------------+               +---------------------+
+                                                                                               |
+  +---------------------+               +---------------------------+                          v
+  | FDR / CVR Recorders | ------------> | Joint GACA & UAE GCAA     | ------------> | 🟡 Full UTC Second  |
+  | (Black Boxes)       |               | Forensic Investigation    |               |    Audit Pending    |
+  +---------------------+               +---------------------------+               +---------------------+
+
+========================================================================================================================
 ---
 
 ## 4. Source Verification Matrix
